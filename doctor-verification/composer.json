@@ -1,0 +1,17 @@
+{
+    "name": "mitei/doctor-verification",
+    "autoload": {
+        "psr-4": {
+            "Mitei\\DoctorVerification\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miteiii",
+            "email": "chelangat.mitei@stratmore.edu"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.16.10"
+    }
+}
