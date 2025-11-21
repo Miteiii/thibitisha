@@ -10,6 +10,8 @@ class Role extends Model
     /** @use HasFactory<\Database\Factories\RoleFactory> */
     use HasFactory;
 }
+protected $primaryKey = 'id';
+protected $table = 'roles';
 protected $fillable =['name', 'description'];
 
 public function users(){
