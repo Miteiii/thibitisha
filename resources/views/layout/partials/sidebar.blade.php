@@ -58,6 +58,9 @@
             <p>Users</p>
           </a>
         </li>
+
+        {{-- User Management Section --}}
+        <li class="nav-header">Practitioner Management</li>
         
         {{-- Settings --}}
         <li class="nav-header">Settings</li>
