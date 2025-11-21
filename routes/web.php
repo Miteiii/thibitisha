@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Mkubwa\AdminController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
     // Admin routes can be defined here
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('dashboard');
 });
+
+Route::resource('roles', RoleController::class);
+Route::resource('users', UserController::class);
+Route::resource('practitioners', PractitionersController::class);
+Route::resource('contacts', UsersController::class);
+Route::resource('statuses', StatusesController::class);
+Route::resource('specialities', SpecialitiesController::class);
+Route::resource('subspecialities', SubspecialitiesController::class);
+Route::resource('institutions', InstitutionsController::class);
+Route::resource('degrees', DegreesController::class);
+Route::resource('settings', SettingsController::class);
+
 // roles have a method(get/post) and a function
 // Route::get('roles', function () {
 //     return view('roles.index');
