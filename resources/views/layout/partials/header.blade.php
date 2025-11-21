@@ -1,4 +1,4 @@
-<!--begin::Header-->
+{{-- <!--begin::Header-->
 <nav class="app-header navbar navbar-expand bg-body">
   <!--begin::Container-->
   <div class="container-fluid">
@@ -97,4 +97,56 @@
   </div>
   <!--end::Container-->
 </nav>
-<!--end::Header-->
+
+<!--end::Header--> --}}
+
+
+
+<header class="bg-white shadow-md sticky top-0 z-10">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <!-- Logo and Brand Name -->
+        <a href="{{ url('/') }}" class="flex items-center space-x-2 text-xl font-bold text-gray-800 tracking-wider">
+            <!-- Logo from /public/images/logo.png -->
+            <img src="{{ asset('images/logo.png') }}" alt="Thibitisha Logo" class="h-8 w-auto rounded-md shadow-sm"> 
+            <span>Thibitisha</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex space-x-6">
+            <a href="{{ url('/') }}" class="text-gray-600 hover:text-blue-600 transition duration-150">Home</a>
+            <a href="{{ url('/about') }}" class="text-gray-600 hover:text-blue-600 transition duration-150">About</a>
+            <a href="{{ url('/verify') }}" class="px-3 py-1 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-150 shadow-md">Verification</a>
+            <a href="{{ url('/mkubwa') }}" class="text-gray-600 hover:text-red-500 transition duration-150">Admin Panel</a>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none">
+            <!-- Hamburger Icon (Menu) -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu (Collapsed by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="{{ url('/') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Home</a>
+            <a href="{{ url('/about') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">About</a>
+            <a href="{{ url('/verify') }}" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Verification</a>
+            <a href="{{ url('/mkubwa') }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Admin Panel</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Simple JavaScript to handle the mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        if (button && menu) {
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
