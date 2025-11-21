@@ -1,4 +1,4 @@
-!--begin::Footer-->
+{{-- <!--begin::Footer-->
 <footer class="app-footer">
   <!--begin::To the end-->
   <div class="float-end d-none d-sm-inline">
@@ -14,4 +14,15 @@
   All rights reserved.
   <!--end::Copyright-->
 </footer>
-<!--end::Footer-->
+
+<!--end::Footer--> --}}
+
+
+<footer class="bg-gray-800 text-white py-4 mt-12">
+    <div class="container mx-auto px-4 text-center">
+        <!-- Footer with copyright information -->
+        <p class="text-sm">
+            <small>&copy; {{ date('Y') }} Thibitisha. All rights reserved. | Check. Trust. Heal.</small>
+        </p>
+    </div>
+</footer>
