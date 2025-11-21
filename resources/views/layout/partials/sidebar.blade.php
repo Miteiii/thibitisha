@@ -1,18 +1,18 @@
 <!--begin::Sidebar-->
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="light">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
     <a href="{{ URL::to('/') }}" class="brand-link">
       <!--begin::Brand Image-->
       <img
-        src="{{ asset('adminlte/assets/img/thibitisha.png') }}"
-        alt="Thibitisha Logo"
+        src="{{ asset('favicon.png') }}"
+        alt="{{env('APP_NAME')}} Logo"
         class="brand-image opacity-75 shadow"
       />
       <!--end::Brand Image-->
       <!--begin::Brand Text-->
-      <span class="brand-text fw-light">Thibitisha</span>
+     <span style="font-size:48px;" class="brand-text fw-light waterfall-regular">{{env('APP_NAME')}}</span>
       <!--end::Brand Text-->
     </a>
     <!--end::Brand Link-->
@@ -32,7 +32,7 @@
       >
         {{-- Dashboard --}}
         <li class="nav-item">
-          <a href="{{ URL::to('/') }}" class="nav-link active">
+      <a href="{{ URL::to('/') }}" class="nav-link {{ request()->is('/') ? 'active' : ""; }}">
             <i class="nav-icon bi bi-speedometer"></i>
             <p>Dashboard</p>
           </a>
@@ -41,35 +41,19 @@
         {{-- User Management Section --}}
         <li class="nav-header">User Management</li>
         
-        {{-- Roles --}}
+       {{-- Roles roles.html --}}
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('roles.index') }}" class="nav-link {{ request()->is('role*') ? 'active' : ""; }}">
             <i class="nav-icon bi bi-shield-lock"></i>
-            <p>
-              Roles
-              <i class="nav-arrow bi bi-chevron-right"></i>
-            </p>
+           <p>Roles</p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ URL::to('roles') }}" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>All Roles</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ URL::to('role/add') }}" class="nav-link">
-                <i class="nav-icon bi bi-circle"></i>
-                <p>Add Role</p>
-              </a>
-            </li>
-          </ul>
+         
         </li>
         
         
         {{-- Users --}}
         <li class="nav-item">
-          <a href="#" class="nav-link">
+         <a href="{{ URL::to('users') }}" class="nav-link {{ request()->is('user*') ? 'active' : ""; }}">
             <i class="nav-icon bi bi-people"></i>
             <p>Users</p>
           </a>
