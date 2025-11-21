@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.zip
+.tar
+.gz
+.database/migrations.zip
