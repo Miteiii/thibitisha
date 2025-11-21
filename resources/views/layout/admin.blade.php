@@ -3,7 +3,9 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@yield('title', 'Thibitisha | Dashboard')</title>
+   <title>@yield('title', 'Dashboard') - {{env('APP_NAME')}}</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" />
     
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -15,6 +17,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!--begin::Fonts-->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -42,6 +47,14 @@
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('adminlte/css/adminlte.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
+
+      <style>
+      .waterfall-regular {
+  font-family: "Waterfall", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+      </style>
     
     {{-- Page-specific styles --}}
     @stack('styles')
