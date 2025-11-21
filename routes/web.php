@@ -1,27 +1,29 @@
 <?php
 
-use App\Models\Role;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Mkubwa\AdminController;
+use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\RoleController;
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Support\Facades\Route;
+
+
+Route::prefix('/')->name('pages.')->group(function(){
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('/verify', [VerificationController::class, 'show'])->name('verify');
+    Route::post('/verify{id}', [VerificationController::class, 'verifyDoctor'])->name('verify');
+
 });
 
-Route::get('test/home', function () {
-    return view('test.home');
-});
-
-Route::get('test/about', function () {
-    return view('test.about');
-});
-
-Route::get('test/contact', function () {
-    return view('test.contact');
+Route::prefix('admin')->name('admin.')->group(function(){
+    // Admin routes can be defined here
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 // roles have a method(get/post) and a function
 // Route::get('roles', function () {
 //     return view('roles.index');
+
 // });
 
-Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
