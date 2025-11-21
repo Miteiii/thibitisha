@@ -27,3 +27,14 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 // });
 
+
+/**
+ * ROLE CONTROLLER
+ * C R U D operations
+ * create
+ * store
+ * edit
+ * save
+ * delete
+ *  
+ */
