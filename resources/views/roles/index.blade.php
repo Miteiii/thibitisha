@@ -18,7 +18,7 @@
       <div class="card-header">
         <h3 class="card-title">All Roles</h3>
         <div class="card-tools">
-          <a href="#" class="btn btn-primary btn-sm">
+          <a href=" " class="btn btn-primary btn-sm">
             <i class="bi bi-plus-circle"></i> Add New Role
           </a>
         </div>
@@ -44,23 +44,23 @@
                 <td>{{$role->name}}</td>
                 <td>{{$role->description}}</td>
                 <td>
-                  <span class="badge bg-success">2</span>
+                 <span class="badge bg-success">{{ $role->users()->count() }}</span>
                 </td>
                 <td>{{ date('M d, Y',strtotime($role->created_at) ) }}</td>
                 <td>
                   <div class="btn-group" role="group">
-                    <a href="#" 
+                    <a href="{{ route('roles.show', $role->id) }}"
                        class="btn btn-info btn-sm" 
                        title="View">
                       <i class="bi bi-eye"></i>
                     </a>
-                    <a href="#" 
+                    <a href="{{ route('roles.edit', $role->id) }}" 
                        class="btn btn-warning btn-sm" 
                        title="Edit">
                       <i class="bi bi-pencil"></i>
                     </a>
                     
-                      <form action="#" 
+                      <form action="{ route('roles.destroy', $role->id) }}" 
                             method="POST" 
                             class="d-inline"
                             onsubmit="return confirm('Are you sure you want to delete this role?');">
