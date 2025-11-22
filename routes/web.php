@@ -6,7 +6,7 @@ use App\Http\Controllers\Mkubwa\AdminController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,16 +23,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::resource('roles', RoleController::class);
-Route::resource('users', UserController::class);
-Route::resource('practitioners', PractitionersController::class);
-Route::resource('contacts', UsersController::class);
-Route::resource('statuses', StatusesController::class);
-Route::resource('specialities', SpecialitiesController::class);
-Route::resource('subspecialities', SubspecialitiesController::class);
-Route::resource('institutions', InstitutionsController::class);
-Route::resource('degrees', DegreesController::class);
-Route::resource('settings', SettingsController::class);
+Route::resource('practitioners', PractitionerController::class);
+Route::resource('contacts', ContactController::class);
+Route::resource('qualifications', QualificationController::class);
+Route::resource('statuses', UserController::class);
+Route::resource('specialities', SpecialityController::class);
+Route::resource('subspecialities', SubspecialityController::class);
+Route::resource('institutions', InstitutionController::class);
+Route::resource('degrees', DegreeController::class);
+Route::resource('settings', SettingController::class);
 
 // roles have a method(get/post) and a function
 // Route::get('roles', function () {
