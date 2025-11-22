@@ -1,14 +1,24 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Mkubwa\AdminController;
-use App\Http\Controllers\VerificationController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\{
+    ContactController,
+    DegreeController,
+    InstitutionController,
+    PractitionerController,
+    RoleController,
+    UserController,
+    VerificationController,
+    HomeController,
+    QualificationController,
+    SettingController,
+    SpecialityController,
+    SubspecialityController,
+    StatusController
+};
 
 Route::prefix('/')->name('pages.')->group(function(){
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -23,6 +33,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('dashboard');
 });
 
+// Resource Routes
 Route::resource('practitioners', PractitionerController::class);
 Route::resource('contacts', ContactController::class);
 Route::resource('qualifications', QualificationController::class);
