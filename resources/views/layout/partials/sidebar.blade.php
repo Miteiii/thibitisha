@@ -59,13 +59,64 @@
           </a>
         </li>
 
-        {{-- User Management Section --}}
+        {{-- Practitioner Management Section --}}
         <li class="nav-header">Practitioner Management</li>
+
+         {{-- Practitioners --}}
+        <li class="nav-item">
+          <a href="{{ route('practitioners.index') }}" class="nav-link {{ request()->is('practitioners*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Practitioners</p>
+          </a>
+        </li>
+
+        {{-- Administration --}}
+        <li class="nav-header">Administration</li>
+
+        {{-- Statuses --}}
+        <li class="nav-item">
+          <a href="{{ route('status.index') }}" class="nav-link {{ request()->is('statuses*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Statuses</p>
+          </a>
+        </li>
+
+        {{-- Specialities--}}
+        <li class="nav-item">
+          <a href="{{ route('specialities.index') }}" class="nav-link {{ request()->is('specialities*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Specialities</p>
+          </a>
+        </li>
+
+        {{-- Subspecialities --}}
+        <li class="nav-item">
+          <a href="{{ route('subspecialities.index') }}" class="nav-link {{ request()->is('subspecialities*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Subspecialities</p>
+          </a>
+        </li>
+
+        {{-- Institutions --}}
+        <li class="nav-item">
+          <a href="{{ route('institutions.index') }}" class="nav-link {{ request()->is('institutions*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Institutions</p>
+          </a>
+        </li>
+
+        {{-- Degrees --}}
+        <li class="nav-item">
+          <a href="{{ route('degrees.index') }}" class="nav-link {{ request()->is('degrees*') ? 'active' : ""; }}">
+            <i class="nav-icon bi bi-person-check"></i>
+            <p>Degrees</p>
+          </a>
+        </li>
         
         {{-- Settings --}}
         <li class="nav-header">Settings</li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('settings.index') }}" class="nav-link {{ request()->is('settings*') ? 'active' : ""; }}">
             <i class="nav-icon bi bi-gear"></i>
             <p>System Settings</p>
           </a>
