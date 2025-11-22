@@ -84,7 +84,7 @@
         {{-- Specialities--}}
         <li class="nav-item">
           <a href="{{ route('specialities.index') }}" class="nav-link {{ request()->is('specialities*') ? 'active' : ""; }}">
-            <i class="nav-icon bi bi-person-check"></i>
+             <i class="nav-icon bi bi-star"></i>
             <p>Specialities</p>
           </a>
         </li>
@@ -92,7 +92,7 @@
         {{-- Subspecialities --}}
         <li class="nav-item">
           <a href="{{ route('subspecialities.index') }}" class="nav-link {{ request()->is('subspecialities*') ? 'active' : ""; }}">
-            <i class="nav-icon bi bi-person-check"></i>
+              <i class="nav-icon bi bi-star-half"></i>
             <p>Subspecialities</p>
           </a>
         </li>
@@ -100,7 +100,7 @@
         {{-- Institutions --}}
         <li class="nav-item">
           <a href="{{ route('institutions.index') }}" class="nav-link {{ request()->is('institutions*') ? 'active' : ""; }}">
-            <i class="nav-icon bi bi-person-check"></i>
+            <i class="nav-icon bi bi-bulding"></i>
             <p>Institutions</p>
           </a>
         </li>
@@ -108,7 +108,7 @@
         {{-- Degrees --}}
         <li class="nav-item">
           <a href="{{ route('degrees.index') }}" class="nav-link {{ request()->is('degrees*') ? 'active' : ""; }}">
-            <i class="nav-icon bi bi-person-check"></i>
+            <i class="nav-icon bi bi-mortarboard"></i>
             <p>Degrees</p>
           </a>
         </li>
@@ -116,7 +116,7 @@
         {{-- Settings --}}
         <li class="nav-header">Settings</li>
         <li class="nav-item">
-          <a href="{{ route('settings.index') }}" class="nav-link {{ request()->is('settings*') ? 'active' : ""; }}">
+          <a href="{{ route(settings.index') }}" class="nav-link {{ request()->is('degrees*') ? 'active' : ""; }}">
             <i class="nav-icon bi bi-gear"></i>
             <p>System Settings</p>
           </a>
