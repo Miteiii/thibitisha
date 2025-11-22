@@ -26,7 +26,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 Route::resource('practitioners', PractitionerController::class);
 Route::resource('contacts', ContactController::class);
 Route::resource('qualifications', QualificationController::class);
-Route::resource('statuses', UserController::class);
+Route::resource('status', StatusController::class);
 Route::resource('specialities', SpecialityController::class);
 Route::resource('subspecialities', SubspecialityController::class);
 Route::resource('institutions', InstitutionController::class);
