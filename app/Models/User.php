@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -60,7 +61,7 @@ class User extends Authenticatable
     
     */
 
-    public function users() : HasMany
+    public function users(): HasMany
     {
          return $this->hasMany(User::class);
     }
